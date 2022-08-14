@@ -38,6 +38,11 @@ __escape_str(char *str){
 			safe_str[i++]= '\'';
 			continue;
 		}
+		if(*c=='\\'){
+			safe_str[i++]= '\\';
+			safe_str[i++]= '\\';
+			continue;
+		}
 		safe_str[i++]= *c;
 	}
 	safe_str[i]='\0';
