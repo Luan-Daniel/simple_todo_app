@@ -1,7 +1,12 @@
+// Autor: 	Luan Daniel de Oliveira Melo.
+//			(luandanielmelo@gmail.com)
+// Criado em agosto de 2022.
+//
+// - app_menu_item.h -
+// Funções para lidar com entrada do usuario no menu de items da lista
+
 #ifndef APP_MENU_ITEM
 #define APP_MENU_ITEM
-
-// Funções para lidar com entrada do usuario no menu de items da lista
 
 #include "../c_helper.h"
 #include "../db_helper.h"
@@ -228,6 +233,7 @@ __app_escrever_info(MYSQL *conn, int lista_id){
 	printf("\n");
 }
 
+// Direciona entrada à respectiva funcionalidade
 char
 app_select_opt_items(MYSQL *conn, int *lista_id){
 	char input= __getkey("ciarqnpdx");

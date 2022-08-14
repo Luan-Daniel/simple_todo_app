@@ -1,7 +1,12 @@
+// Autor: 	Luan Daniel de Oliveira Melo.
+//			(luandanielmelo@gmail.com)
+// Criado em agosto de 2022.
+//
+// - app_menu_lista.h -
+// Funções para lidar com entrada do usuario no menu de listas
+
 #ifndef APP_MENU_LISTA
 #define APP_MENU_LISTA
-
-// Funções para lidar com entrada do usuario no menu de listas
 
 #include "../c_helper.h"
 #include "../db_helper.h"
@@ -82,6 +87,7 @@ __app_remover_lista(MYSQL *conn){
 	db_delete_lista(conn, id);
 }
 
+// Direciona entrada à respectiva funcionalidade
 char
 app_select_opt_listas(MYSQL *conn, int *select){
 	char input= __getkey("acrxpq");

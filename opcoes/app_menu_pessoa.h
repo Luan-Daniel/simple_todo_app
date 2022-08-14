@@ -1,7 +1,12 @@
+// Autor: 	Luan Daniel de Oliveira Melo.
+//			(luandanielmelo@gmail.com)
+// Criado em agosto de 2022.
+//
+// - app_menu_pessoa.h -
+// Funções para lidar com entrada do usuario no menu de pessoas
+
 #ifndef APP_MENU_PESSOA
 #define APP_MENU_PESSOA
-
-// Funções para lidar com entrada do usuario no menu de pessoas
 
 #include "../c_helper.h"
 #include "../db_helper.h"
@@ -103,6 +108,7 @@ __app_remover_pessoa(MYSQL *conn){
 	db_delete_pessoa(conn, id);
 }
 
+// Direciona entrada à respectiva funcionalidade
 char
 app_select_opt_pessoas(MYSQL *conn, int *select){
 	char input= __getkey("crxq");

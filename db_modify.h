@@ -1,7 +1,13 @@
+// Autor: 	Luan Daniel de Oliveira Melo.
+//			(luandanielmelo@gmail.com)
+// Criado em agosto de 2022.
+//
+// - db_modify.h -
+// Funcoes para excluir e atualizar tupla,
+// tambem para executar arquivo .sql
+
 #ifndef DB_MODIFY
 #define DB_MODIFY
-
-// Funcoes para excluir e atualizar tupla, tambem para executar arquivo .sql
 
 #include "c_helper.h"
 #include "db_helper.h"
@@ -10,7 +16,8 @@
 #include "db_insert.h"
 
 
-// executa um arquivo .sql no banco de dados
+// Executa um arquivo .sql no banco de dados
+// {não usado}
 void
 db_exec_file(MYSQL *conn, char *filename){
 	if(!filename || !conn) return;
@@ -38,6 +45,8 @@ db_exec_file(MYSQL *conn, char *filename){
 	fclose(file);
 }
 
+// Deleta tuplas de tabelas
+// !{safe input}
 void
 db_delete_from(MYSQL *conn, char *rel, char *pred){
 	if(!conn || !rel) return;
@@ -49,6 +58,8 @@ db_delete_from(MYSQL *conn, char *rel, char *pred){
 	db_query(conn, query);
 }
 
+// Atualiza colunas de tabelas
+// !{safe input}
 void
 db_update(MYSQL *conn, char *rel, char *atr, char *expr, char *pred){
 	if(!conn || !rel || !atr || !expr) return;
@@ -60,7 +71,9 @@ db_update(MYSQL *conn, char *rel, char *atr, char *expr, char *pred){
 	db_query(conn, query);
 }
 
+
 // Funções de delete complexas
+// {safe input}
 
 void
 db_delete_item_pessoa(MYSQL *conn, int item_id, int pessoa_id){

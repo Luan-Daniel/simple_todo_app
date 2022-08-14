@@ -1,7 +1,13 @@
+// Autor: 	Luan Daniel de Oliveira Melo.
+//			(luandanielmelo@gmail.com)
+// Criado em agosto de 2022.
+//
+// - app_todo.h -
+// Funções que escrevem as listas e menus;
+// E gerenciam a navegação ente eles.
+
 #ifndef APP_TODO
 #define APP_TODO
-
-// Funções que escrevem as listas e menus
 
 #include "db_todo.h"
 #include "c_helper.h"
@@ -131,6 +137,7 @@ app_escrever_itens(MYSQL *conn, int *select){
 	return app_select_opt_items(conn, select);
 }
 
+// Direciona para menu desejado
 char
 app_main(MYSQL *conn){
 	int pos=0;

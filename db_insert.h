@@ -1,12 +1,16 @@
+// Autor: 	Luan Daniel de Oliveira Melo.
+//			(luandanielmelo@gmail.com)
+// Criado em agosto de 2022.
+//
+// - db_insert.h -
+// Define funcoes de insercao em tabelas
+
 #ifndef DB_INSERT
 #define DB_INSERT
 
 #include <stdlib.h>
-
-// Define funcoes de insercao em tabelas
-
 #include "db_connect.h"
-#include "db_print.h"
+#include "db_get.h"
 #include "c_helper.h"
 #include "db_helper.h"
 
@@ -16,6 +20,7 @@ int __insert_error=0;
 // 2= argumento muito grande (erro em nivel de aplicação)
 
 // Funções de inserção
+// {safe input}
 
 int
 db_insert_into_pessoa(MYSQL *conn, char *nome, char *email){

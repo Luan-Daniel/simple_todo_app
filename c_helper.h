@@ -1,10 +1,15 @@
+// Autor: 	Luan Daniel de Oliveira Melo.
+//			(luandanielmelo@gmail.com)
+// Criado em agosto de 2022.
+//
+// - c_helper.h -
+// Funções C uteis
+
 #ifndef C_HELPER_H
 #define C_HELPER_H
 
 #include <conio.h>
 #include <errno.h>
-
-// Funções C de ajuda
 
 unsigned int
 __count_char(char *str, const char ch){

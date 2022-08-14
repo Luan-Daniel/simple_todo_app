@@ -1,3 +1,12 @@
+// Autor: 	Luan Daniel de Oliveira Melo.
+//			(luandanielmelo@gmail.com)
+// Criado em agosto de 2022.
+//
+// - db_connect.h -
+// Funcoes para gerenciar conexao com
+// banco de dados;
+// E escrever mensagem erro do DB.
+
 #ifndef DB_CONNECT
 #define DB_CONNECT
 
@@ -5,7 +14,6 @@
 #include <stdlib.h>
 #include <mysql.h>
 
-// Funcoes para gerenciar conexao com banco de dados
 
 // Print MySQL error
 void
@@ -36,9 +44,14 @@ db_close( MYSQL* conn){
 	mysql_close(conn);
 }
 
+
 // Envia query para banco de dados
 int
-db_query(MYSQL* conn, char* query){
+db_query(MYSQL *conn, char* query){
+	if(!conn)  fprintf(stderr, "[!] db_query: MYSQL *conn == NULL\n");
+	if(!query) fprintf(stderr, "[!] db_query: char *query == NULL\n");
+	if(!conn || !query) return ~0;
+
 	int ret = mysql_query(conn, query);
 	if(ret) _perr(conn, "db_query");
 	return ret;

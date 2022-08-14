@@ -1,3 +1,12 @@
+-- Projetado por: 	Luan Daniel de Oliveira Melo
+-- 					(luandanielmelo@gmail.com)
+-- Criado em agosto de 2022.
+-- 
+-- Modelo físico gerado a partir de Modelo Lógico
+-- usando freeware brModelo (2.0.0)
+-- 
+-- Sql ANSI 2003 - brModelo.
+
 CREATE TABLE item_pessoa (
 item_id integer,
 pessoa_id integer,

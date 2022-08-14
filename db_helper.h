@@ -1,9 +1,18 @@
+// Autor: 	Luan Daniel de Oliveira Melo.
+//			(luandanielmelo@gmail.com)
+// Criado em agosto de 2022.
+//
+// - db_helper.h -
+// Define funções uteis
+
 #ifndef DB_HELPER_H
 #define DB_HELPER_H
 
 #include "db_connect.h"
-#include "db_print.h"
+#include "db_get.h"
 
+// Pega resultado de busca por maior _id e retorna incremento
+// !{resultado de busca por maior _id}
 int
 _get_new_id(MYSQL* conn){
 	unsigned int max_id;
@@ -16,6 +25,7 @@ _get_new_id(MYSQL* conn){
 	return 1;
 }
 
+// Retorna proximo _id
 int
 __get_next_seq(MYSQL* conn, char* tab, char* atr){
 	char query[1024];
@@ -24,6 +34,11 @@ __get_next_seq(MYSQL* conn, char* tab, char* atr){
 	return _get_new_id(conn);
 }
 
+// val==NULL => Conta quantinade de atr em tab
+// val!=NULL => Conta quantinade de atr==val em tab
+// isstr==0  => !{non text val}
+// isstr==1  => !{safe val}
+// isstr==-1  => !{safe val} val é lido como predicado
 unsigned int
 __count_eq(MYSQL* conn, char* tab, char* atr, char* val, short isstr){
 	unsigned int count;
