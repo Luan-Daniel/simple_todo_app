@@ -4,8 +4,12 @@ do projeto MinGW-w64 (https://www.mingw-w64.org/) versão 12.1.0.
 Binarios adquiridos em http://www.equation.com/servlet/equation.cmd?fa=fortran.
 
 # - Conexão MySQL -
-Cabeçalhos e binario para C API (libmysqlclient) são inclusos na instalção
-de MySQL 8.0 para Windowns: https://dev.mysql.com/downloads/c-api/
+Cabeçalhos e binario para C API (libmysqlclient) são inclusos na instalção de
+MySQL 8.0 para Windowns: https://dev.mysql.com/downloads/c-api/
+
+# - Banco de dados MySQL -
+O programa acessa o banco de dados 'todo_app' em 'localhost' como usuario 'root' e senha vazia ''.
+O banco deve ser previamente construido usando as querys em init.sql.
 
 # - Compilação -
 > gcc main.c -llibmysql -o app.exe
